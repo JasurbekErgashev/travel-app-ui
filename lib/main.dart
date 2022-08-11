@@ -1,65 +1,52 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import './screens/home_page.dart';
+import './screens/booking_page.dart';
+import './screens/info_page.dart';
+import 'screens/profile_page.dart';
+import './screens/details_page.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+void main() => runApp(const TravelApp());
+
+class TravelApp extends StatelessWidget {
+  const TravelApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Travel App',
+      // onGenerateRoute: (settings) {
+      //   if (settings.name == '/booking') {
+      //     return PageRouteBuilder(
+      //         pageBuilder: (_, __, ___) => const BookingPage());
+      //   }
+      //   if (settings.name == '/') {
+      //     return PageRouteBuilder(
+      //         pageBuilder: (_, __, ___) => const HomePage());
+      //   }
+      //   if (settings.name == '/info') {
+      //     return PageRouteBuilder(
+      //         pageBuilder: (_, __, ___) => const InfoPage());
+      //   }
+      //   if (settings.name == '/profile') {
+      //     return PageRouteBuilder(
+      //         pageBuilder: (_, __, ___) => const ProfilePage());
+      //   }
+      //   if (settings.name == '/details') {
+      //     return PageRouteBuilder(
+      //         pageBuilder: (_, __, ___) => const DetailsPage());
+      //   }
+      //   return null;
+      // },
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        '/booking': (context) => const BookingPage(),
+        '/info': (context) => const InfoPage(),
+        '/profile': (context) => const ProfilePage(),
+        '/details': (context) => const DetailsPage(),
+      },
     );
   }
 }
