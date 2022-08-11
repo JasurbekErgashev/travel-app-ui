@@ -18,6 +18,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/sky/
+    - assets/images/profiles/
     - assets/icons/
 
   fonts:

@@ -12,6 +12,9 @@ const cDarkReddishColor = Color(0xFFe85c45);
 const cLightYellowishColor = Color(0xFFF3AE80);
 const cDarkYellowishColor = Color(0xFFE88944);
 
+const cGreyLikeBackgroundColor = Color(0x99BEB7B0);
+const cGreyTextColor = Color(0xFFD9D9D9);
+
 const Map<String, String> cIconPaths = {
   'bookmark': 'assets/icons/bookmark.png',
   'home': 'assets/icons/home.png',
@@ -43,7 +46,7 @@ const cDefaultHeight = SizedBox(
   height: 20.0,
 );
 
-const cDummyDataSet = [
+const List<Map<String, dynamic>> cDummyDataSet = [
   {
     'iconImagePath': 'assets/images/sky_tour_icon.png',
     'sectionName': 'Sky',
@@ -66,10 +69,10 @@ const cDummyDataSet = [
       {
         'placeName': 'Thiksey Monastery',
         'imagePath': [
-          'assets/images....',
-          'assets/images....',
-          'assets/images....',
-          'assets/images....',
+          'assets/images/sky/1.png',
+          'assets/images/sky/1.png',
+          'assets/images/sky/1.png',
+          'assets/images/sky/1.png',
         ],
         'location': 'Ladakh, India',
         'price': '148',
@@ -81,10 +84,10 @@ const cDummyDataSet = [
       {
         'placeName': 'Thiksey Monastery',
         'imagePath': [
-          'assets/images....',
-          'assets/images....',
-          'assets/images....',
-          'assets/images....',
+          'assets/images/sky/1.png',
+          'assets/images/sky/1.png',
+          'assets/images/sky/1.png',
+          'assets/images/sky/1.png',
         ],
         'location': 'Ladakh, India',
         'price': '148',
@@ -96,10 +99,10 @@ const cDummyDataSet = [
       {
         'placeName': 'Thiksey Monastery',
         'imagePath': [
-          'assets/images....',
-          'assets/images....',
-          'assets/images....',
-          'assets/images....',
+          'assets/images/sky/1.png',
+          'assets/images/sky/1.png',
+          'assets/images/sky/1.png',
+          'assets/images/sky/1.png',
         ],
         'location': 'Ladakh, India',
         'price': '148',
