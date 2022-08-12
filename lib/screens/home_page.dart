@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import '../components/floating_action_button.dart';
 import '../components/bottom_navigation.dart';
@@ -41,9 +40,7 @@ class HomePage extends StatelessWidget {
                 Row(
                   children: const [
                     CustomSearchBox(),
-                    SizedBox(
-                      width: 25.0,
-                    ),
+                    cDefaultWidth,
                     CustomPreferencesIcon(),
                   ],
                 ),
@@ -125,26 +122,9 @@ class HomePage extends StatelessWidget {
                 cDefaultHeight,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text('Travel Places', style: cSubheadingTextStyle),
-                    Container(
-                      width: 80.0,
-                      height: 30.0,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFEDEDED),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: const Text(
-                        'View All',
-                        style: TextStyle(
-                          color: clightBlackColor,
-                          fontFamily: 'Montserrat',
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
+                  children: const [
+                    Text('Travel Places', style: cSubheadingTextStyle),
+                    ViewAllButton(),
                   ],
                 ),
                 cDefaultHeight,
@@ -168,14 +148,7 @@ class HomePage extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(30.0),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: cVeryLightGreyColor,
-                              spreadRadius: -10.0,
-                              blurRadius: 10.0,
-                              offset: Offset(1.0, 3.0),
-                            ),
-                          ],
+                          boxShadow: cDefaultCardBoxShadow,
                         ),
                         child: Column(
                           children: [
@@ -264,60 +237,7 @@ class HomePage extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(
-                                      width: 84.0,
-                                      child: Stack(
-                                        alignment: Alignment.centerRight,
-                                        children: [
-                                          ...List.generate(
-                                            4,
-                                            (index) => Positioned(
-                                              left: index * 18,
-                                              child: Container(
-                                                height: 30.0,
-                                                width: 30.0,
-                                                alignment: Alignment.center,
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                    color: Colors.white,
-                                                    width: 2.0,
-                                                  ),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(15),
-                                                  boxShadow: const [
-                                                    BoxShadow(
-                                                      color:
-                                                          cVeryLightGreyColor,
-                                                      spreadRadius: -2.0,
-                                                      blurRadius: 5.0,
-                                                      offset: Offset(1.0, 3.0),
-                                                    ),
-                                                  ],
-                                                  image: DecorationImage(
-                                                    image: AssetImage(
-                                                        'assets/images/profiles/${index + 1}.png'),
-                                                    //fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                                child: index == 3
-                                                    ? const Text(
-                                                        '+15',
-                                                        style: TextStyle(
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontSize: 12.0,
-                                                        ),
-                                                      )
-                                                    : Container(),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                    const CustomProfilesWidget(),
                                   ],
                                 ),
                               ),

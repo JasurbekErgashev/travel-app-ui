@@ -46,6 +46,19 @@ const cDefaultHeight = SizedBox(
   height: 20.0,
 );
 
+const cDefaultWidth = SizedBox(
+  width: 25.0,
+);
+
+const cDefaultCardBoxShadow = [
+  BoxShadow(
+    color: cVeryLightGreyColor,
+    spreadRadius: -10.0,
+    blurRadius: 10.0,
+    offset: Offset(1.0, 3.0),
+  ),
+];
+
 const List<Map<String, dynamic>> cDummyDataSet = [
   {
     'iconImagePath': 'assets/images/sky_tour_icon.png',
@@ -54,10 +67,10 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       {
         'placeName': 'Hot Air Balloon',
         'imagePath': [
-          'assets/images/sky/1.png',
-          'assets/images/sky/2.png',
-          'assets/images/sky/3.png',
-          'assets/images/sky/4.png',
+          'assets/images/sky/1/1.png',
+          'assets/images/sky/1/2.png',
+          'assets/images/sky/1/3.png',
+          'assets/images/sky/1/4.png',
         ],
         'location': 'Cappadocia, Turkey',
         'price': '159',
@@ -67,49 +80,49 @@ const List<Map<String, dynamic>> cDummyDataSet = [
             'Cappadocia is an amazing and spectacular landscape that has been sculpted by erosion over thousands of years. These cave like dwellings and rock-hewn sanctuaries date back to the Byzantine post-Iconoclastic period, as far back as 4th Century. Today what is left are these amazing troglodyte villages, underground cities that once contained human habitat and beautiful valleys that go for as far as the eye can see. For those who want the hassle taken out of organizing your day, we offer several package tours that start from Istanbul to Cappadocia. All included flight tickets, accommodation and daily sightseeing tours while in Cappadocia.',
       },
       {
-        'placeName': 'Thiksey Monastery',
+        'placeName': 'Komodo dragons',
         'imagePath': [
-          'assets/images/sky/1.png',
-          'assets/images/sky/1.png',
-          'assets/images/sky/1.png',
-          'assets/images/sky/1.png',
+          'assets/images/sky/2/1.png',
+          'assets/images/sky/2/2.png',
+          'assets/images/sky/2/3.png',
+          'assets/images/sky/2/4.png',
         ],
-        'location': 'Ladakh, India',
-        'price': '148',
-        'distance': '625',
-        'ratings': '4.6',
+        'location': 'Bali, Indonesia',
+        'price': '500',
+        'distance': '676',
+        'ratings': '4.5',
         'description':
-            'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.',
+            'You\'ll find beaches, volcanoes, Komodo dragons and jungles sheltering elephants, orangutans and tigers. Basically, it\'s paradise. It\'s likely you\'ve seen an image of Bali on social media at least once in the past seven days, as it\'s such a popular bucket list destination for 2019.',
       },
       {
-        'placeName': 'Thiksey Monastery',
+        'placeName': 'Lively City',
         'imagePath': [
-          'assets/images/sky/1.png',
-          'assets/images/sky/1.png',
-          'assets/images/sky/1.png',
-          'assets/images/sky/1.png',
+          'assets/images/sky/3/1.png',
+          'assets/images/sky/3/2.png',
+          'assets/images/sky/3/3.png',
+          'assets/images/sky/3/4.png',
         ],
-        'location': 'Ladakh, India',
-        'price': '148',
-        'distance': '625',
-        'ratings': '4.6',
+        'location': 'New Orleans, USA',
+        'price': '500',
+        'distance': '999',
+        'ratings': '4.9',
         'description':
-            'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.',
+            'The lively city known for its street music, festive vibe and a melting pot of French, African and American cultures is well worth the trip. NOLA is a city packed with adventures at every turn and should be on everyone\'s must-visit list.',
       },
       {
-        'placeName': 'Thiksey Monastery',
+        'placeName': 'Postcard Perfect',
         'imagePath': [
-          'assets/images/sky/1.png',
-          'assets/images/sky/1.png',
-          'assets/images/sky/1.png',
-          'assets/images/sky/1.png',
+          'assets/images/sky/4/1.png',
+          'assets/images/sky/4/2.png',
+          'assets/images/sky/4/3.png',
+          'assets/images/sky/4/4.png',
         ],
-        'location': 'Ladakh, India',
-        'price': '148',
-        'distance': '625',
-        'ratings': '4.6',
+        'location': 'Kerry, Ireland',
+        'price': '788',
+        'distance': '120',
+        'ratings': '5.0',
         'description':
-            'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.',
+            'All the way west in Ireland is one of the country\'s most scenic counties. Kerry\'s mountains, lakes and coasts are postcard-perfect, and that\'s before you add in Killarney National Park. The unique small towns such as Dingle add to its charm.',
       },
     ],
   },

@@ -83,3 +83,87 @@ class CustomSearchBox extends StatelessWidget {
     );
   }
 }
+
+class ViewAllButton extends StatelessWidget {
+  const ViewAllButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 80.0,
+      height: 30.0,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: const Color(0xFFEDEDED),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: const Text(
+        'View All',
+        style: TextStyle(
+          color: clightBlackColor,
+          fontFamily: 'Montserrat',
+          fontSize: 12.0,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    );
+  }
+}
+
+class CustomProfilesWidget extends StatelessWidget {
+  const CustomProfilesWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 84.0,
+      child: Stack(
+        alignment: Alignment.centerRight,
+        children: [
+          ...List.generate(
+            4,
+            (index) => Positioned(
+              left: index * 18,
+              child: Container(
+                height: 30.0,
+                width: 30.0,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 2.0,
+                  ),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: cVeryLightGreyColor,
+                      spreadRadius: -2.0,
+                      blurRadius: 5.0,
+                      offset: Offset(1.0, 3.0),
+                    ),
+                  ],
+                  image: DecorationImage(
+                    image:
+                        AssetImage('assets/images/profiles/${index + 1}.png'),
+                    //fit: BoxFit.cover,
+                  ),
+                ),
+                child: index == 3
+                    ? const Text(
+                        '+15',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12.0,
+                        ),
+                      )
+                    : Container(),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

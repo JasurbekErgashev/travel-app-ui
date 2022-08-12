@@ -18,6 +18,10 @@ flutter:
   assets:
     - assets/images/
     - assets/images/sky/
+    - assets/images/sky/1/
+    - assets/images/sky/2/
+    - assets/images/sky/3/
+    - assets/images/sky/4/
     - assets/images/profiles/
     - assets/icons/
 
