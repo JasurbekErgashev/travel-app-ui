@@ -42,6 +42,18 @@ const cSubheadingTextStyle = TextStyle(
   color: cdarkBlackColor,
 );
 
+const cMainCardHeadingTextStyle = TextStyle(
+  fontSize: 14.0,
+  fontFamily: 'Montserrat',
+  fontWeight: FontWeight.bold,
+);
+
+const cMainCardLocationTextStyle = TextStyle(
+  color: cVeryLightGreyColor,
+  fontFamily: 'Montserrat',
+  fontSize: 12.0,
+);
+
 const cDefaultHeight = SizedBox(
   height: 20.0,
 );
@@ -58,6 +70,23 @@ const cDefaultCardBoxShadow = [
     offset: Offset(1.0, 3.0),
   ),
 ];
+
+TextStyle subHeadingTextStyle(int index) {
+  return TextStyle(
+    color: index == 0 ? const Color(0xFFFFFFFF) : cdarkBlackColor,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w500,
+  );
+}
+
+EdgeInsetsGeometry customCardConditionalMargin(int index) {
+  return EdgeInsets.only(
+    right: index !=
+            (cDummyDataSet[0]['places'] as List<Map<String, Object>>).length - 1
+        ? 20.0
+        : 0.0,
+  );
+}
 
 const List<Map<String, dynamic>> cDummyDataSet = [
   {

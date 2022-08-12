@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/details_page_args.dart';
 import '../components/floating_action_button.dart';
 import '../components/bottom_navigation.dart';
 import '../components/custom_menu.dart';
@@ -78,14 +79,7 @@ class HomePage extends StatelessWidget {
                                     Colors.white,
                                   ],
                                 ),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: cVeryLightGreyColor,
-                              spreadRadius: -10.0,
-                              blurRadius: 10.0,
-                              offset: Offset(1.0, 3.0),
-                            ),
-                          ],
+                          boxShadow: cDefaultCardBoxShadow,
                         ),
                         child: Row(
                           children: [
@@ -105,12 +99,7 @@ class HomePage extends StatelessWidget {
                             ),
                             Text(
                               cDummyDataSet[index]['sectionName'] as String,
-                              style: TextStyle(
-                                color:
-                                    index == 0 ? Colors.white : cdarkBlackColor,
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: subHeadingTextStyle(index),
                             ),
                           ],
                         ),
@@ -134,15 +123,7 @@ class HomePage extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: ((context, index) {
                       return Container(
-                        margin: EdgeInsets.only(
-                          right: index !=
-                                  (cDummyDataSet[0]['places']
-                                              as List<Map<String, Object>>)
-                                          .length -
-                                      1
-                              ? 20.0
-                              : 0.0,
-                        ),
+                        margin: customCardConditionalMargin(index),
                         padding: const EdgeInsets.all(10.0),
                         width: 300.0,
                         decoration: BoxDecoration(
@@ -154,37 +135,64 @@ class HomePage extends StatelessWidget {
                           children: [
                             Expanded(
                               flex: 2,
-                              child: Container(
-                                width: double.infinity,
-                                alignment: Alignment.topRight,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  image: DecorationImage(
-                                    image: AssetImage(cDummyDataSet[0]['places']
-                                        [index]['imagePath'][0]),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                      color: cVeryLightGreyColor,
-                                      spreadRadius: 1.0,
-                                      blurRadius: 10.0,
-                                      offset: Offset(1.0, 3.0),
+                              child: Hero(
+                                tag: 'cardImage$index',
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/details',
+                                      arguments: DetailsPageArgs(
+                                          index,
+                                          cDummyDataSet[0]['places'][index]
+                                              ['placeName'],
+                                          cDummyDataSet[0]['places'][index]
+                                              ['imagePath'],
+                                          cDummyDataSet[0]['places'][index]
+                                              ['location'],
+                                          cDummyDataSet[0]['places'][index]
+                                              ['price'],
+                                          cDummyDataSet[0]['places'][index]
+                                              ['distance'],
+                                          cDummyDataSet[0]['places'][index]
+                                              ['ratings'],
+                                          cDummyDataSet[0]['places'][index]
+                                              ['description']),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: double.infinity,
+                                    alignment: Alignment.topRight,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30.0),
+                                      image: DecorationImage(
+                                        image: AssetImage(cDummyDataSet[0]
+                                            ['places'][index]['imagePath'][0]),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          color: cVeryLightGreyColor,
+                                          spreadRadius: 1.0,
+                                          blurRadius: 10.0,
+                                          offset: Offset(1.0, 3.0),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                                child: Container(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  margin: const EdgeInsets.all(12.5),
-                                  padding: const EdgeInsets.all(10.0),
-                                  decoration: const BoxDecoration(
-                                    color: cGreyLikeBackgroundColor,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Image.asset(
-                                    'assets/icons/heart.png',
-                                    color: Colors.white,
+                                    child: Container(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      margin: const EdgeInsets.all(12.5),
+                                      padding: const EdgeInsets.all(10.0),
+                                      decoration: const BoxDecoration(
+                                        color: cGreyLikeBackgroundColor,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Image.asset(
+                                        'assets/icons/heart.png',
+                                        color: Colors.white,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -205,11 +213,7 @@ class HomePage extends StatelessWidget {
                                         Text(
                                           cDummyDataSet[0]['places'][index]
                                               ['placeName'],
-                                          style: const TextStyle(
-                                            fontSize: 14.0,
-                                            fontFamily: 'Montserrat',
-                                            fontWeight: FontWeight.bold,
-                                          ),
+                                          style: cMainCardHeadingTextStyle,
                                         ),
                                         Row(
                                           children: [
@@ -227,11 +231,7 @@ class HomePage extends StatelessWidget {
                                             Text(
                                               cDummyDataSet[0]['places'][index]
                                                   ['location'],
-                                              style: const TextStyle(
-                                                color: cVeryLightGreyColor,
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 12.0,
-                                              ),
+                                              style: cMainCardLocationTextStyle,
                                             ),
                                           ],
                                         ),
