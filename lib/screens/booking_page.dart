@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../components/floating_action_button.dart';
 import '../components/bottom_navigation.dart';
-import '../constants.dart';
+
+import '../constants/colors.dart';
 
 class BookingPage extends StatelessWidget {
   const BookingPage({Key? key}) : super(key: key);

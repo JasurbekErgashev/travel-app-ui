@@ -17,6 +17,9 @@ class TravelApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Travel App',
+      theme: ThemeData(
+        fontFamily: 'Montserrat',
+      ),
       onGenerateRoute: (settings) {
         if (settings.name == '/booking') {
           return PageRouteBuilder(

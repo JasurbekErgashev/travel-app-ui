@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../constants/colors.dart';
+import '../constants/icons.dart';
 
 class CustomPreferencesIcon extends StatelessWidget {
   const CustomPreferencesIcon({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class CustomPreferencesIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: Image.asset(
-        'assets/icons/preferences.png',
+        CustomIcons.preferences,
         color: Colors.white,
       ),
     );
@@ -58,7 +59,7 @@ class CustomSearchBox extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(
-              'assets/icons/search.png',
+              CustomIcons.search,
               color: cdarkBlackColor,
             ),
             const Expanded(
@@ -94,7 +95,7 @@ class ViewAllButton extends StatelessWidget {
       height: 30.0,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: const Color(0xFFEDEDED),
+        color: cLightGreyColor,
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: const Text(
@@ -163,6 +164,32 @@ class CustomProfilesWidget extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomSmallCardWithImage extends StatelessWidget {
+  const CustomSmallCardWithImage({Key? key, required this.imagePath})
+      : super(key: key);
+  final String imagePath;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 60.0,
+      height: 60.0,
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: cGreyLikeBackgroundColorV2,
+          width: 4.0,
+        ),
+        borderRadius: BorderRadius.circular(20.0),
+        image: DecorationImage(
+          image: AssetImage(
+            imagePath,
+          ),
+        ),
       ),
     );
   }

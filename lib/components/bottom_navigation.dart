@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../components/bottom_navigation_tab.dart';
-import '../constants.dart';
+import '../constants/icons.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar(this.currentPage, {Key? key})
@@ -18,24 +18,22 @@ class CustomBottomNavigationBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             currentPage == 'home'
-                ? ActiveBottomNavigationItem(cIconPaths['home'] as String)
-                : InactiveBottomNavigationItem(cIconPaths['home'] as String,
-                    () => Navigator.pushNamed(context, '/')),
+                ? const ActiveBottomNavigationItem(CustomIcons.home)
+                : InactiveBottomNavigationItem(
+                    CustomIcons.home, () => Navigator.pushNamed(context, '/')),
             currentPage == 'booking'
-                ? ActiveBottomNavigationItem(cIconPaths['bookmark'] as String)
-                : InactiveBottomNavigationItem(cIconPaths['bookmark'] as String,
+                ? const ActiveBottomNavigationItem(CustomIcons.bookmark)
+                : InactiveBottomNavigationItem(CustomIcons.bookmark,
                     () => Navigator.pushNamed(context, '/booking')),
             const SizedBox.shrink(),
             currentPage == 'info'
-                ? ActiveBottomNavigationItem(cIconPaths['note'] as String)
-                : InactiveBottomNavigationItem(cIconPaths['note'] as String,
+                ? const ActiveBottomNavigationItem(CustomIcons.note)
+                : InactiveBottomNavigationItem(CustomIcons.note,
                     () => Navigator.pushNamed(context, '/info')),
             currentPage == 'profile'
-                ? ActiveBottomNavigationItem(cIconPaths['user'] as String)
-                : InactiveBottomNavigationItem(
-                    cIconPaths['user'] as String,
-                    (() => Navigator.pushNamed(context, '/profile')),
-                  ),
+                ? const ActiveBottomNavigationItem(CustomIcons.user)
+                : InactiveBottomNavigationItem(CustomIcons.user,
+                    () => Navigator.pushNamed(context, '/profile')),
           ],
         ),
       ),

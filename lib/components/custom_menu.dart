@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../constants/colors.dart';
+import '../constants/icons.dart';
 
 class CustomMenu extends StatelessWidget {
   const CustomMenu({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class CustomMenu extends StatelessWidget {
         ],
       ),
       child: Image.asset(
-        'assets/icons/menu.png',
+        CustomIcons.menu,
         color: cdarkBlackColor,
       ),
     );

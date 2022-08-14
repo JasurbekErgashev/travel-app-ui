@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../constants/colors.dart';
+import '../constants/icons.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class CustomFloatingActionButton extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        child: Image.asset(cIconPaths['shopping-cart'] as String),
+        child: Image.asset(CustomIcons.shoppingCart),
       ),
     );
   }

@@ -8,6 +8,9 @@ import '../components/custom_notifications_bell.dart';
 import '../components/custom_widgets.dart';
 import '../constants.dart';
 
+import '../constants/colors.dart';
+import '../constants/icons.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
   @override
@@ -143,21 +146,22 @@ class HomePage extends StatelessWidget {
                                       context,
                                       '/details',
                                       arguments: DetailsPageArgs(
-                                          index,
-                                          cDummyDataSet[0]['places'][index]
-                                              ['placeName'],
-                                          cDummyDataSet[0]['places'][index]
-                                              ['imagePath'],
-                                          cDummyDataSet[0]['places'][index]
-                                              ['location'],
-                                          cDummyDataSet[0]['places'][index]
-                                              ['price'],
-                                          cDummyDataSet[0]['places'][index]
-                                              ['distance'],
-                                          cDummyDataSet[0]['places'][index]
-                                              ['ratings'],
-                                          cDummyDataSet[0]['places'][index]
-                                              ['description']),
+                                        index,
+                                        cDummyDataSet[0]['places'][index]
+                                            ['placeName'],
+                                        cDummyDataSet[0]['places'][index]
+                                            ['imagePath'],
+                                        cDummyDataSet[0]['places'][index]
+                                            ['location'],
+                                        cDummyDataSet[0]['places'][index]
+                                            ['price'],
+                                        cDummyDataSet[0]['places'][index]
+                                            ['distance'],
+                                        cDummyDataSet[0]['places'][index]
+                                            ['ratings'],
+                                        cDummyDataSet[0]['places'][index]
+                                            ['description'],
+                                      ),
                                     );
                                   },
                                   child: Container(
@@ -189,7 +193,7 @@ class HomePage extends StatelessWidget {
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.asset(
-                                        'assets/icons/heart.png',
+                                        CustomIcons.heart,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -221,7 +225,7 @@ class HomePage extends StatelessWidget {
                                               width: 20.0,
                                               height: 20.0,
                                               child: Image.asset(
-                                                'assets/icons/pin.png',
+                                                CustomIcons.pin,
                                                 color: cVeryLightGreyColor,
                                               ),
                                             ),

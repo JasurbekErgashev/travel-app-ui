@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../constants/colors.dart';
 
 class InactiveBottomNavigationItem extends StatelessWidget {
   const InactiveBottomNavigationItem(this.iconPath, this.navigationHandler,

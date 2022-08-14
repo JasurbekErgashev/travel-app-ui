@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../constants/colors.dart';
+import '../constants/icons.dart';
 
 class CustomNotificationsIcon extends StatelessWidget {
   const CustomNotificationsIcon({Key? key}) : super(key: key);
@@ -27,7 +28,7 @@ class CustomNotificationsIcon extends StatelessWidget {
             ],
           ),
           child: Image.asset(
-            'assets/icons/notification.png',
+            CustomIcons.notification,
             color: cdarkBlackColor,
           ),
         ),

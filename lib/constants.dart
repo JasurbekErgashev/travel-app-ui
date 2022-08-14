@@ -1,56 +1,30 @@
 import 'package:flutter/cupertino.dart';
 
-const cScaffoldBackgroundColor = Color(0xFFF9F9F9);
-
-const clightBlackColor = Color(0xFF545454);
-const cdarkBlackColor = Color(0xFF1D1D1D);
-const cVeryLightGreyColor = Color(0xFFA1A1A1);
-
-const cLightReddishColor = Color(0xFFE59E8B);
-const cDarkReddishColor = Color(0xFFe85c45);
-
-const cLightYellowishColor = Color(0xFFF3AE80);
-const cDarkYellowishColor = Color(0xFFE88944);
-
-const cGreyLikeBackgroundColor = Color(0x99BEB7B0);
-const cGreyTextColor = Color(0xFFD9D9D9);
-
-const Map<String, String> cIconPaths = {
-  'bookmark': 'assets/icons/bookmark.png',
-  'home': 'assets/icons/home.png',
-  'note': 'assets/icons/note.png',
-  'shopping-cart': 'assets/icons/shopping-cart.png',
-  'user': 'assets/icons/user.png',
-};
+import './constants/colors.dart';
 
 const cLightHeadingTextStyle = TextStyle(
   color: clightBlackColor,
-  fontFamily: 'Montserrat',
   fontSize: 28.0,
 );
 
 const cDarkHeadingTextStyle = TextStyle(
   color: cdarkBlackColor,
-  fontFamily: 'Montserrat',
   fontSize: 28.0,
   fontWeight: FontWeight.bold,
 );
 
 const cSubheadingTextStyle = TextStyle(
-  fontFamily: 'Montserrat',
   fontSize: 25.0,
   color: cdarkBlackColor,
 );
 
 const cMainCardHeadingTextStyle = TextStyle(
   fontSize: 14.0,
-  fontFamily: 'Montserrat',
   fontWeight: FontWeight.bold,
 );
 
 const cMainCardLocationTextStyle = TextStyle(
   color: cVeryLightGreyColor,
-  fontFamily: 'Montserrat',
   fontSize: 12.0,
 );
 
@@ -74,7 +48,6 @@ const cDefaultCardBoxShadow = [
 TextStyle subHeadingTextStyle(int index) {
   return TextStyle(
     color: index == 0 ? const Color(0xFFFFFFFF) : cdarkBlackColor,
-    fontFamily: 'Montserrat',
     fontWeight: FontWeight.w500,
   );
 }
