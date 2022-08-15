@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -148,6 +146,7 @@ class DetailsPage extends StatelessWidget {
                                         overflow: TextOverflow.fade,
                                         text: TextSpan(
                                           style: const TextStyle(
+                                            fontFamily: 'Montserrat',
                                             color: Colors.white,
                                           ),
                                           children: [

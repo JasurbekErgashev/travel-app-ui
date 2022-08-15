@@ -6,13 +6,23 @@ import '../components/bottom_navigation.dart';
 import '../components/custom_menu.dart';
 import '../components/custom_notifications_bell.dart';
 import '../components/custom_widgets.dart';
+import '../components/categories.dart';
 import '../constants.dart';
 
 import '../constants/colors.dart';
 import '../constants/icons.dart';
+import '../constants/shadows.dart';
+import '../constants/gradients.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _categoryTracker = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,53 +69,14 @@ class HomePage extends StatelessWidget {
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemBuilder: ((context, index) {
-                      return Container(
-                        width: 140.0,
-                        margin: EdgeInsets.only(
-                          right: index != cDummyDataSet.length - 1 ? 20.0 : 0.0,
-                        ),
-                        padding: const EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          gradient: index == 0
-                              ? const LinearGradient(
-                                  colors: [
-                                    cLightReddishColor,
-                                    cDarkReddishColor
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                )
-                              : const LinearGradient(
-                                  colors: [
-                                    Colors.white,
-                                    Colors.white,
-                                  ],
-                                ),
-                          boxShadow: cDefaultCardBoxShadow,
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(5.0),
-                              decoration: BoxDecoration(
-                                color: index == 0
-                                    ? Colors.white
-                                    : cScaffoldBackgroundColor,
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                              child: Image.asset(cDummyDataSet[index]
-                                  ['iconImagePath'] as String),
-                            ),
-                            const SizedBox(
-                              width: 20.0,
-                            ),
-                            Text(
-                              cDummyDataSet[index]['sectionName'] as String,
-                              style: subHeadingTextStyle(index),
-                            ),
-                          ],
-                        ),
+                      return Categories(
+                        index: index,
+                        categoryTracker: _categoryTracker,
+                        tabHandler: () {
+                          setState(() {
+                            _categoryTracker = index;
+                          });
+                        },
                       );
                     }),
                     itemCount: cDummyDataSet.length,
@@ -126,13 +97,21 @@ class HomePage extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: ((context, index) {
                       return Container(
-                        margin: customCardConditionalMargin(index),
+                        margin: EdgeInsets.only(
+                          right: index !=
+                                  (cDummyDataSet[0]['places']
+                                              as List<Map<String, Object>>)
+                                          .length -
+                                      1
+                              ? 20.0
+                              : 0.0,
+                        ),
                         padding: const EdgeInsets.all(10.0),
                         width: 300.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(30.0),
-                          boxShadow: cDefaultCardBoxShadow,
+                          boxShadow: cCommonBoxShadow,
                         ),
                         child: Column(
                           children: [
@@ -147,20 +126,20 @@ class HomePage extends StatelessWidget {
                                       '/details',
                                       arguments: DetailsPageArgs(
                                         index,
-                                        cDummyDataSet[0]['places'][index]
-                                            ['placeName'],
-                                        cDummyDataSet[0]['places'][index]
-                                            ['imagePath'],
-                                        cDummyDataSet[0]['places'][index]
-                                            ['location'],
-                                        cDummyDataSet[0]['places'][index]
-                                            ['price'],
-                                        cDummyDataSet[0]['places'][index]
-                                            ['distance'],
-                                        cDummyDataSet[0]['places'][index]
-                                            ['ratings'],
-                                        cDummyDataSet[0]['places'][index]
-                                            ['description'],
+                                        cDummyDataSet[_categoryTracker]
+                                            ['places'][index]['placeName'],
+                                        cDummyDataSet[_categoryTracker]
+                                            ['places'][index]['imagePath'],
+                                        cDummyDataSet[_categoryTracker]
+                                            ['places'][index]['location'],
+                                        cDummyDataSet[_categoryTracker]
+                                            ['places'][index]['price'],
+                                        cDummyDataSet[_categoryTracker]
+                                            ['places'][index]['distance'],
+                                        cDummyDataSet[_categoryTracker]
+                                            ['places'][index]['ratings'],
+                                        cDummyDataSet[_categoryTracker]
+                                            ['places'][index]['description'],
                                       ),
                                     );
                                   },
@@ -170,8 +149,10 @@ class HomePage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(30.0),
                                       image: DecorationImage(
-                                        image: AssetImage(cDummyDataSet[0]
-                                            ['places'][index]['imagePath'][0]),
+                                        image: AssetImage(
+                                            cDummyDataSet[_categoryTracker]
+                                                    ['places'][index]
+                                                ['imagePath'][0]),
                                         fit: BoxFit.cover,
                                       ),
                                       boxShadow: const [
@@ -215,8 +196,8 @@ class HomePage extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          cDummyDataSet[0]['places'][index]
-                                              ['placeName'],
+                                          cDummyDataSet[_categoryTracker]
+                                              ['places'][index]['placeName'],
                                           style: cMainCardHeadingTextStyle,
                                         ),
                                         Row(
@@ -232,10 +213,17 @@ class HomePage extends StatelessWidget {
                                             const SizedBox(
                                               width: 5.0,
                                             ),
-                                            Text(
-                                              cDummyDataSet[0]['places'][index]
-                                                  ['location'],
-                                              style: cMainCardLocationTextStyle,
+                                            SizedBox(
+                                              width: 120.0,
+                                              child: Text(
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                                cDummyDataSet[_categoryTracker]
+                                                        ['places'][index]
+                                                    ['location'] as String,
+                                                style:
+                                                    cMainCardLocationTextStyle,
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -250,7 +238,7 @@ class HomePage extends StatelessWidget {
                         ),
                       );
                     }),
-                    itemCount: (cDummyDataSet[0]['places']
+                    itemCount: (cDummyDataSet[_categoryTracker]['places']
                             as List<Map<String, Object>>)
                         .length,
                   ),

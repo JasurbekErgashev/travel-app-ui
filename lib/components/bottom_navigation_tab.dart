@@ -15,9 +15,12 @@ class InactiveBottomNavigationItem extends StatelessWidget {
     return GestureDetector(
       onTap: navigationHandler,
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.05,
         width: MediaQuery.of(context).size.width * 0.075,
-        child: Image.asset(iconPath, color: cVeryLightGreyColor),
+        height: MediaQuery.of(context).size.height * 0.05,
+        child: Image.asset(
+          iconPath,
+          color: cVeryLightGreyColor,
+        ),
       ),
     );
   }
@@ -32,13 +35,10 @@ class ActiveBottomNavigationItem extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        GestureDetector(
-          onTap: () {},
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.05,
-            width: MediaQuery.of(context).size.width * 0.075,
-            child: Image.asset(iconPath, color: cdarkBlackColor),
-          ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.05,
+          width: MediaQuery.of(context).size.width * 0.075,
+          child: Image.asset(iconPath, color: cdarkBlackColor),
         ),
         Container(
           height: 5.0,

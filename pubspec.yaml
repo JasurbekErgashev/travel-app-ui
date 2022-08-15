@@ -22,6 +22,26 @@ flutter:
     - assets/images/sky/2/
     - assets/images/sky/3/
     - assets/images/sky/4/
+    - assets/images/beach/
+    - assets/images/beach/1/
+    - assets/images/beach/2/
+    - assets/images/beach/3/
+    - assets/images/beach/4/
+    - assets/images/history/
+    - assets/images/history/1/
+    - assets/images/history/2/
+    - assets/images/history/3/
+    - assets/images/history/4/
+    - assets/images/meals/
+    - assets/images/meals/1/
+    - assets/images/meals/2/
+    - assets/images/meals/3/
+    - assets/images/meals/4/
+    - assets/images/city/
+    - assets/images/city/1/
+    - assets/images/city/2/
+    - assets/images/city/3/
+    - assets/images/city/4/
     - assets/images/profiles/
     - assets/icons/
 
@@ -32,8 +52,3 @@ flutter:
         - asset: assets/fonts/Montserrat-Regular.ttf
         - asset: assets/fonts/Montserrat-Medium.ttf
         - asset: assets/fonts/Montserrat-Bold.ttf
-    # - family: Trajan Pro
-    #   fonts:
-    #     - asset: fonts/TrajanPro.ttf
-    #     - asset: fonts/TrajanPro_Bold.ttf
-    #       weight: 700

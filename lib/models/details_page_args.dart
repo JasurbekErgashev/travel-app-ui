@@ -7,6 +7,14 @@ class DetailsPageArgs {
   final String distance;
   final String ratings;
   final String description;
-  DetailsPageArgs(this.index, this.placeName, this.imagePaths, this.location,
-      this.price, this.distance, this.ratings, this.description);
+  DetailsPageArgs(
+    this.index,
+    this.placeName,
+    this.imagePaths,
+    this.location,
+    this.price,
+    this.distance,
+    this.ratings,
+    this.description,
+  );
 }

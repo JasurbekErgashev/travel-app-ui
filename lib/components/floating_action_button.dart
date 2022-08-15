@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
+import '../constants/gradients.dart';
 import '../constants/icons.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -16,11 +16,7 @@ class CustomFloatingActionButton extends StatelessWidget {
         padding: const EdgeInsets.all(15.0),
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
-          gradient: LinearGradient(
-            colors: [clightBlackColor, cdarkBlackColor],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+          gradient: cDarkishGradientColor,
         ),
         child: Image.asset(CustomIcons.shoppingCart),
       ),
