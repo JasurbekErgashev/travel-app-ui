@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -35,7 +37,7 @@ class DetailsPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            height: deviceHeight - 30,
+            height: deviceHeight + 80,
             margin: const EdgeInsets.all(15.0),
             child: Column(
               children: [
@@ -220,8 +222,173 @@ class DetailsPage extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: Container(
-                      //color: Colors.blue,
-                      ),
+                    margin: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        cDefaultHeight,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 60.0,
+                                  height: 60.0,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                  child: ShaderMask(
+                                    shaderCallback: (bounds) =>
+                                        const LinearGradient(
+                                      colors: [
+                                        cLightReddishColor,
+                                        cDarkReddishColor,
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ).createShader(bounds),
+                                    child: const Icon(
+                                      Icons.watch_later_rounded,
+                                      color: Colors.white,
+                                      size: 35.0,
+                                    ),
+                                  ),
+                                ),
+                                cDefaultWidth,
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '$distance KM',
+                                      style: const TextStyle(
+                                        fontSize: 20.0,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    const Text(
+                                      'Distance',
+                                      style:
+                                          TextStyle(color: cVeryLightGreyColor),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  width: 60.0,
+                                  height: 60.0,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                  child: ShaderMask(
+                                    shaderCallback: (bounds) =>
+                                        const LinearGradient(
+                                      colors: [
+                                        cLightYellowishColor,
+                                        cDarkYellowishColor
+                                      ],
+                                      begin: Alignment.topRight,
+                                      end: Alignment.bottomLeft,
+                                    ).createShader(bounds),
+                                    child: const Icon(
+                                      Icons.star_rounded,
+                                      color: Colors.white,
+                                      size: 35,
+                                    ),
+                                  ),
+                                ),
+                                cDefaultWidth,
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      ratings,
+                                      style: const TextStyle(
+                                        fontSize: 20.0,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    const Text(
+                                      'Ratings',
+                                      style:
+                                          TextStyle(color: cVeryLightGreyColor),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        cDefaultHeight,
+                        const Text('Description', style: cSubheadingTextStyle),
+                        cDefaultHeight,
+                        Text(
+                          description,
+                          style: const TextStyle(
+                            fontSize: 16.0,
+                            color: cVeryLightGreyColor,
+                          ),
+                          maxLines: 3,
+                          overflow: TextOverflow.fade,
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: IconButton(
+                            padding: const EdgeInsets.all(1.0),
+                            splashRadius: 30.0,
+                            alignment: Alignment.topCenter,
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.expand_more_rounded,
+                              color: cVeryLightGreyColor,
+                              size: 45.0,
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            height: 60.0,
+                            width: double.infinity,
+                            alignment: Alignment.center,
+                            margin:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [clightBlackColor, cdarkBlackColor],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: cVeryLightGreyColor,
+                                  spreadRadius: -1.0,
+                                  blurRadius: 5.0,
+                                  offset: Offset(0, 5.0),
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            child: const Text(
+                              'Book Now',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
