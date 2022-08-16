@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../components/floating_action_button.dart';
+import '../components/custom_widgets.dart';
 import '../components/bottom_navigation.dart';
 
 import '../constants/colors.dart';

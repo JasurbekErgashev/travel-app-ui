@@ -32,3 +32,13 @@ const cInactiveCategoryGradientColor = LinearGradient(
     Colors.white,
   ],
 );
+
+const cDetailsPageBlackGradientColor = LinearGradient(
+  colors: [
+    Colors.transparent,
+    cBlackColorOpac,
+  ],
+  stops: [0.05, 0.95],
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+);

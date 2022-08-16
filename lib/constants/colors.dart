@@ -11,5 +11,5 @@ const cDarkYellowishColor = Color(0xFFE88944);
 const cGreyLikeBackgroundColor = Color(0x99BEB7B0);
 const cGreyLikeBackgroundColorV2 = Color(0xAABEB7B0);
 const cGreyTextColor = Color(0xFFD9D9D9);
-const cBlackColorOpac = Color(0x88000000);
+const cBlackColorOpac = Color(0x55000000);
 const cLightGreyColor = Color(0xFFEDEDED);
