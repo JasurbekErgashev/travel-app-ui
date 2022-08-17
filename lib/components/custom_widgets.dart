@@ -99,7 +99,48 @@ class CustomPreferencesIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                actionsAlignment: MainAxisAlignment.spaceBetween,
+                title: const Text('Search Filter'),
+                content: SingleChildScrollView(
+                  child: ListBody(
+                    children: const [
+                      Text('Some content will go here...'),
+                    ],
+                  ),
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: Text(
+                      'No',
+                      style: TextStyle(color: Colors.grey.shade500),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          backgroundColor: Colors.blueAccent.shade200,
+                          duration: const Duration(seconds: 2),
+                          content: const Text('Something will happen...'),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      'Yes',
+                      style: TextStyle(color: cdarkBlackColor),
+                    ),
+                  ),
+                ],
+              );
+            });
+      },
       child: Container(
         height: 60.0,
         width: 60.0,
