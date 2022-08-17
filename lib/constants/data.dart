@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-const List<Map<String, dynamic>> cDummyDataSet = [
+List<Map<String, dynamic>> cDummyDataSet = [
   {
     'iconImagePath': 'assets/images/sky_tour_icon.png',
     'sectionName': 'Sky',
     'places': [
       {
         'placeName': 'Hot Air Balloon',
+        'like': false,
         'imagePath': [
           'assets/images/sky/1/1.png',
           'assets/images/sky/1/2.png',
@@ -22,6 +23,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Komodo dragons',
+        'like': false,
         'imagePath': [
           'assets/images/sky/2/1.png',
           'assets/images/sky/2/2.png',
@@ -37,6 +39,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Lively City',
+        'like': false,
         'imagePath': [
           'assets/images/sky/3/1.png',
           'assets/images/sky/3/2.png',
@@ -52,6 +55,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Postcard Perfect',
+        'like': false,
         'imagePath': [
           'assets/images/sky/4/1.png',
           'assets/images/sky/4/2.png',
@@ -73,6 +77,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
     'places': [
       {
         'placeName': 'Red City',
+        'like': false,
         'imagePath': [
           'assets/images/beach/1/1.png',
           'assets/images/beach/1/2.png',
@@ -88,6 +93,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Gorgeous Beaches',
+        'like': false,
         'imagePath': [
           'assets/images/beach/2/1.png',
           'assets/images/beach/2/2.png',
@@ -103,6 +109,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Tropical Nation',
+        'like': false,
         'imagePath': [
           'assets/images/beach/3/1.png',
           'assets/images/beach/3/2.png',
@@ -118,6 +125,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Eiffel Tower',
+        'like': false,
         'imagePath': [
           'assets/images/beach/4/1.png',
           'assets/images/beach/4/2.png',
@@ -139,6 +147,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
     'places': [
       {
         'placeName': 'Registan',
+        'like': false,
         'imagePath': [
           'assets/images/history/1/1.png',
           'assets/images/history/1/2.png',
@@ -154,6 +163,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Cape Town',
+        'like': false,
         'imagePath': [
           'assets/images/history/2/1.png',
           'assets/images/history/2/2.png',
@@ -169,6 +179,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'High-flying City',
+        'like': false,
         'imagePath': [
           'assets/images/history/3/1.png',
           'assets/images/history/3/2.png',
@@ -184,6 +195,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Bora Bora',
+        'like': false,
         'imagePath': [
           'assets/images/history/4/1.png',
           'assets/images/history/4/2.png',
@@ -205,6 +217,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
     'places': [
       {
         'placeName': 'Noma',
+        'like': false,
         'imagePath': [
           'assets/images/meals/1/1.png',
           'assets/images/meals/1/2.png',
@@ -220,6 +233,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Disfrutar',
+        'like': false,
         'imagePath': [
           'assets/images/meals/2/1.png',
           'assets/images/meals/2/2.png',
@@ -235,6 +249,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Mugaritz',
+        'like': false,
         'imagePath': [
           'assets/images/meals/3/1.png',
           'assets/images/meals/3/2.png',
@@ -250,6 +265,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Septime',
+        'like': false,
         'imagePath': [
           'assets/images/meals/4/1.png',
           'assets/images/meals/4/2.png',
@@ -271,6 +287,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
     'places': [
       {
         'placeName': 'New York City',
+        'like': false,
         'imagePath': [
           'assets/images/city/1/1.png',
           'assets/images/city/1/2.png',
@@ -286,6 +303,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Rome',
+        'like': false,
         'imagePath': [
           'assets/images/city/2/1.png',
           'assets/images/city/2/2.png',
@@ -301,6 +319,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Lord of the Rings',
+        'like': false,
         'imagePath': [
           'assets/images/city/3/1.png',
           'assets/images/city/3/2.png',
@@ -316,6 +335,7 @@ const List<Map<String, dynamic>> cDummyDataSet = [
       },
       {
         'placeName': 'Incredible Tokyo',
+        'like': false,
         'imagePath': [
           'assets/images/city/4/1.png',
           'assets/images/city/4/2.png',

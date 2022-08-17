@@ -7,6 +7,7 @@ class DetailsPageArgs {
   final String distance;
   final String ratings;
   final String description;
+  final bool like;
   DetailsPageArgs(
     this.index,
     this.placeName,
@@ -16,5 +17,6 @@ class DetailsPageArgs {
     this.distance,
     this.ratings,
     this.description,
+    this.like,
   );
 }

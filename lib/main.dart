@@ -54,6 +54,7 @@ class TravelApp extends StatelessWidget {
                 distance: args.distance,
                 ratings: args.ratings,
                 description: args.description,
+                like: args.like,
               ),
             );
           case '/notifications':

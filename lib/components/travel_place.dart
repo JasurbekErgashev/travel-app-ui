@@ -11,10 +11,14 @@ import '../models/details_page_args.dart';
 
 class CustomTravelPlace extends StatelessWidget {
   const CustomTravelPlace(
-      {Key? key, required this.index, required this.categoryTracker})
+      {Key? key,
+      required this.index,
+      required this.categoryTracker,
+      required this.likeHandler})
       : super(key: key);
   final int index;
   final int categoryTracker;
+  final VoidCallback likeHandler;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -59,6 +63,7 @@ class CustomTravelPlace extends StatelessWidget {
                           ['ratings'],
                       cDummyDataSet[categoryTracker]['places'][index]
                           ['description'],
+                      cDummyDataSet[categoryTracker]['places'][index]['like'],
                     ),
                   );
                 },
@@ -77,15 +82,20 @@ class CustomTravelPlace extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.all(12.5),
                     child: RawMaterialButton(
-                      onPressed: () {},
+                      onPressed: likeHandler,
                       constraints: const BoxConstraints.tightFor(
                           width: 50.0, height: 50.0),
                       shape: const CircleBorder(),
                       fillColor: cGreyLikeBackgroundColor,
                       elevation: 0.0,
                       padding: const EdgeInsets.all(10.0),
-                      child:
-                          Image.asset(CustomIcons.heart, color: Colors.white),
+                      child: Image.asset(
+                        CustomIcons.heart,
+                        color: cDummyDataSet[categoryTracker]['places'][index]
+                                ['like']
+                            ? Colors.red.shade400
+                            : Colors.white,
+                      ),
                     ),
                   ),
                 ),

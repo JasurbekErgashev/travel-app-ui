@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart';
 import '../components/custom_widgets.dart';
+
+import '../constants/constants.dart';
 import '../constants/colors.dart';
 import '../constants/icons.dart';
 import '../constants/shadows.dart';
 import '../constants/gradients.dart';
 
 class DetailsPage extends StatefulWidget {
-  const DetailsPage({
+  DetailsPage({
     Key? key,
     required this.index,
     required this.placeName,
@@ -18,6 +19,7 @@ class DetailsPage extends StatefulWidget {
     required this.distance,
     required this.ratings,
     required this.description,
+    required this.like,
   }) : super(key: key);
   final int index;
   final String placeName;
@@ -27,6 +29,7 @@ class DetailsPage extends StatefulWidget {
   final String distance;
   final String ratings;
   final String description;
+  bool like;
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
@@ -91,7 +94,18 @@ class _DetailsPageState extends State<DetailsPage> {
                                 ),
                                 CustomTransparentButtons(
                                   childIcon: CustomIcons.heart,
-                                  tabHandler: () {},
+                                  tabHandler: () {
+                                    //TODO there is a serious bug below inside setState which needs to be fixed
+                                    /// Now, I really feel the importance of State Management
+                                    /// I will come back after I have learnt powerful staff about SM
+                                    setState(() {
+                                      /// wola
+                                      !widget.like
+                                          ? widget.like = true
+                                          : widget.like = false;
+                                    });
+                                  },
+                                  like: widget.like,
                                 ),
                               ],
                             ),

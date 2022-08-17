@@ -1,9 +1,28 @@
 import 'package:flutter/material.dart';
 
 import '../constants/gradients.dart';
+import '../constants/data.dart';
 
-class SideNavBar extends StatelessWidget {
-  const SideNavBar({Key? key}) : super(key: key);
+class SideNavBar extends StatefulWidget {
+  const SideNavBar({Key? key, required this.favorites}) : super(key: key);
+  final List<Map<String, Object>> favorites;
+
+  @override
+  State<SideNavBar> createState() => _SideNavBarState();
+}
+
+class _SideNavBarState extends State<SideNavBar> {
+  int get numFavorites {
+    int n = 0;
+    for (int i = 0; i < cDummyDataSet.length; i++) {
+      for (int j = 0; j < cDummyDataSet[i]['places'].length; j++) {
+        if (cDummyDataSet[i]['places'][j]['like']) {
+          n++;
+        }
+      }
+    }
+    return n;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,21 +58,23 @@ class SideNavBar extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.favorite_rounded, size: 30.0),
             title: const Text('Favorites'),
-            trailing: Container(
-              width: 25.0,
-              height: 25.0,
-              alignment: Alignment.center,
-              decoration: const BoxDecoration(
-                gradient: cReddishGradientColor,
-                shape: BoxShape.circle,
-              ),
-              child: const Text(
-                '2',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            trailing: numFavorites == 0
+                ? const Text('')
+                : Container(
+                    width: 25.0,
+                    height: 25.0,
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                      gradient: cReddishGradientColor,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Text(
+                      '$numFavorites',
+                      style: const TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
             onTap: () {},
           ),
           ListTile(

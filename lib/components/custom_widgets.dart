@@ -345,10 +345,11 @@ class EachTravelPlaceInfo extends StatelessWidget {
 
 class CustomTransparentButtons extends StatelessWidget {
   const CustomTransparentButtons(
-      {Key? key, required this.childIcon, required this.tabHandler})
+      {Key? key, required this.childIcon, required this.tabHandler, this.like})
       : super(key: key);
   final String childIcon;
   final VoidCallback tabHandler;
+  final bool? like;
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
@@ -358,7 +359,14 @@ class CustomTransparentButtons extends StatelessWidget {
       fillColor: cGreyLikeBackgroundColorV2,
       elevation: 0.0,
       padding: const EdgeInsets.all(10.0),
-      child: Image.asset(childIcon, color: Colors.white),
+      child: Image.asset(
+        childIcon,
+        color: like == null
+            ? Colors.white
+            : like!
+                ? Colors.red.shade400
+                : Colors.white,
+      ),
     );
   }
 }

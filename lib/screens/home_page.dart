@@ -20,11 +20,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _categoryTracker = 0;
+  final List<Map<String, Object>> _favorites = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const SideNavBar(),
+      drawer: SideNavBar(favorites: _favorites),
       backgroundColor: cScaffoldBackgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -101,7 +102,19 @@ class _HomePageState extends State<HomePage> {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: ((context, index) {
                       return CustomTravelPlace(
-                          index: index, categoryTracker: _categoryTracker);
+                        index: index,
+                        categoryTracker: _categoryTracker,
+                        likeHandler: () {
+                          setState(() {
+                            !cDummyDataSet[_categoryTracker]['places'][index]
+                                    ['like']
+                                ? cDummyDataSet[_categoryTracker]['places']
+                                    [index]['like'] = true
+                                : cDummyDataSet[_categoryTracker]['places']
+                                    [index]['like'] = false;
+                          });
+                        },
+                      );
                     }),
                     itemCount: (cDummyDataSet[_categoryTracker]['places']
                             as List<Map<String, Object>>)
