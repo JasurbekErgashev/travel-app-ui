@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 const List<Map<String, dynamic>> cDummyDataSet = [
   {
     'iconImagePath': 'assets/images/sky_tour_icon.png',
@@ -378,4 +380,20 @@ const List<Map<String, String>> notificationsData = [
     'code': 'AAA/999',
     'time': '8h ago',
   },
+];
+
+const List<String> profilePageInfo = [
+  'Edit Profile',
+  'My Trips',
+  'My Friends',
+  'My Wallet',
+  'Logout',
+];
+
+const List<IconData> profilePageIcons = [
+  Icons.note_alt_rounded,
+  Icons.local_airport_rounded,
+  Icons.people_alt_rounded,
+  Icons.account_balance_wallet_rounded,
+  Icons.logout_rounded,
 ];
