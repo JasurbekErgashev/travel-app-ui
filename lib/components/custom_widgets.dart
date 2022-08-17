@@ -29,12 +29,12 @@ class CustomFloatingActionButton extends StatelessWidget {
 }
 
 class CustomMenu extends StatelessWidget {
-  const CustomMenu({Key? key}) : super(key: key);
-
+  const CustomMenu({Key? key, required this.tabHandler}) : super(key: key);
+  final VoidCallback tabHandler;
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: () {},
+      onPressed: tabHandler,
       shape: const CircleBorder(),
       constraints: const BoxConstraints.tightFor(width: 55.0, height: 55.0),
       fillColor: Colors.white,

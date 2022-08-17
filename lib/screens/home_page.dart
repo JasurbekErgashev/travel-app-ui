@@ -4,6 +4,7 @@ import '../components/bottom_navigation.dart';
 import '../components/custom_widgets.dart';
 import '../components/categories.dart';
 import '../components/travel_place.dart';
+import '../components/sidenavbar.dart';
 
 import '../constants/constants.dart';
 import '../constants/data.dart';
@@ -17,10 +18,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _categoryTracker = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: const SideNavBar(),
       backgroundColor: cScaffoldBackgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -31,9 +35,11 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    CustomMenu(),
-                    CustomNotificationsIcon(),
+                  children: [
+                    CustomMenu(
+                      tabHandler: () => _scaffoldKey.currentState?.openDrawer(),
+                    ),
+                    const CustomNotificationsIcon(),
                   ],
                 ),
                 cDefaultHeight,
