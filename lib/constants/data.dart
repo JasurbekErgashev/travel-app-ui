@@ -330,3 +330,52 @@ const List<Map<String, dynamic>> cDummyDataSet = [
     ],
   },
 ];
+
+const List<Map<String, String>> notificationsData = [
+  {
+    'imagePath': 'assets/images/sky/3/1.png',
+    'title': 'Discount Available',
+    'description':
+        'We recommend 10% discount for your next awesome travel to Lively City of New Orleans.',
+    'code': 'JAS/130',
+    'time': '2h ago',
+  },
+  {
+    'imagePath': 'assets/images/beach/3/3.png',
+    'title': 'Special Offer',
+    'description':
+        'We offer you special 60% discount including lunch package for your next awesome travel to the Maldives',
+    'code': 'QWE/456',
+    'time': '5h ago',
+  },
+  {
+    'imagePath': 'assets/images/city/4/1.png',
+    'title': 'Only For You',
+    'description': 'Exclusive for you \'All in ONE\' package.',
+    'code': 'AAA/999',
+    'time': '8h ago',
+  },
+  {
+    'imagePath': 'assets/images/sky/2/1.png',
+    'title': 'Discount Available',
+    'description':
+        'We recommend 10% discount for your next awesome travel to Lively City of New Orleans.',
+    'code': 'JAS/130',
+    'time': '2h ago',
+  },
+  {
+    'imagePath': 'assets/images/history/1/2.png',
+    'title': 'Special Offer',
+    'description':
+        'We offer you special 60% discount including lunch package for your next awesome travel to the Maldives',
+    'code': 'QWE/456',
+    'time': '5h ago',
+  },
+  {
+    'imagePath': 'assets/images/beach/1/1.png',
+    'title': 'Only For You',
+    'description': 'Exclusive for you \'All in ONE\' package.',
+    'code': 'AAA/999',
+    'time': '8h ago',
+  },
+];

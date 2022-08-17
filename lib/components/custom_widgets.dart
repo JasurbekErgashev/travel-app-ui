@@ -51,15 +51,16 @@ class CustomMenu extends StatelessWidget {
 }
 
 class CustomNotificationsIcon extends StatelessWidget {
-  const CustomNotificationsIcon({Key? key}) : super(key: key);
-
+  const CustomNotificationsIcon({Key? key, required this.tabHandler})
+      : super(key: key);
+  final VoidCallback tabHandler;
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.topRight,
       children: [
         RawMaterialButton(
-          onPressed: () {},
+          onPressed: tabHandler,
           shape: const CircleBorder(),
           constraints: const BoxConstraints.tightFor(width: 55.0, height: 55.0),
           fillColor: Colors.white,
@@ -82,7 +83,7 @@ class CustomNotificationsIcon extends StatelessWidget {
           ),
           child: const Center(
             child: Text(
-              '2',
+              '6',
               style: cNotificationsNumberTextStyle,
             ),
           ),

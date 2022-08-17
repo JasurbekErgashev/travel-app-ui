@@ -39,7 +39,10 @@ class _HomePageState extends State<HomePage> {
                     CustomMenu(
                       tabHandler: () => _scaffoldKey.currentState?.openDrawer(),
                     ),
-                    const CustomNotificationsIcon(),
+                    CustomNotificationsIcon(
+                      tabHandler: () =>
+                          Navigator.pushNamed(context, '/notifications'),
+                    ),
                   ],
                 ),
                 cDefaultHeight,

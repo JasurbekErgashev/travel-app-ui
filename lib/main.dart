@@ -5,7 +5,11 @@ import './screens/booking_page.dart';
 import './screens/info_page.dart';
 import './screens/profile_page.dart';
 import './screens/details_page.dart';
+import './screens/notifications_page.dart';
+
 import './models/details_page_args.dart';
+
+import './components/custom_page_route.dart';
 
 void main() => runApp(const TravelApp());
 
@@ -51,6 +55,11 @@ class TravelApp extends StatelessWidget {
                 ratings: args.ratings,
                 description: args.description,
               ),
+            );
+          case '/notifications':
+            return CustomPageRoute(
+              child: const NotificationsPage(),
+              direction: AxisDirection.left,
             );
           default:
             return null;
