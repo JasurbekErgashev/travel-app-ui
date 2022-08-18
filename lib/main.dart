@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import './screens/home_page.dart';
 import './screens/booking_page.dart';
@@ -6,16 +7,24 @@ import './screens/info_page.dart';
 import './screens/profile_page.dart';
 import './screens/details_page.dart';
 import './screens/notifications_page.dart';
+import './screens/onboarding_screen.dart';
 
 import './models/details_page_args.dart';
 
 import './components/custom_page_route.dart';
 
-void main() => runApp(const TravelApp());
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  final showHome = prefs.getBool('showHome') ?? false;
+  runApp(TravelApp(
+    showHome: showHome,
+  ));
+}
 
 class TravelApp extends StatelessWidget {
-  const TravelApp({Key? key}) : super(key: key);
-
+  const TravelApp({Key? key, required this.showHome}) : super(key: key);
+  final bool showHome;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,7 +35,7 @@ class TravelApp extends StatelessWidget {
       ),
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case '/':
+          case '/home':
             return PageRouteBuilder(
               pageBuilder: (_, __, ___) => const HomePage(),
             );
@@ -62,12 +71,15 @@ class TravelApp extends StatelessWidget {
               child: const NotificationsPage(),
               direction: AxisDirection.left,
             );
+          case '/onboard':
+            return PageRouteBuilder(
+              pageBuilder: (_, __, ___) => const OnboardingScreen(),
+            );
           default:
             return null;
         }
       },
-      initialRoute: '/',
-      routes: const {},
+      home: showHome ? const HomePage() : const OnboardingScreen(),
     );
   }
 }

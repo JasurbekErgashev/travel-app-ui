@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/gradients.dart';
 import '../constants/data.dart';
+import '../constants/colors.dart';
 
 class SideNavBar extends StatefulWidget {
   const SideNavBar({Key? key, required this.favorites}) : super(key: key);
@@ -107,7 +109,37 @@ class _SideNavBarState extends State<SideNavBar> {
           ListTile(
             leading: const Icon(Icons.exit_to_app_rounded, size: 30.0),
             title: const Text('Exit'),
-            onTap: () {},
+            onTap: () => {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      actionsAlignment: MainAxisAlignment.spaceBetween,
+                      title: const Text('Are you sure?'),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text(
+                            'No',
+                            style: TextStyle(color: Colors.grey.shade500),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () async {
+                            final prefs = await SharedPreferences.getInstance();
+                            prefs.setBool('showHome', false);
+                            if (!mounted) return;
+                            Navigator.pushReplacementNamed(context, '/onboard');
+                          },
+                          child: const Text(
+                            'Yes',
+                            style: TextStyle(color: cdarkBlackColor),
+                          ),
+                        ),
+                      ],
+                    );
+                  }),
+            },
           ),
         ],
       ),

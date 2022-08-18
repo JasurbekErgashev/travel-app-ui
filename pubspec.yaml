@@ -8,6 +8,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  shared_preferences: ^2.0.15
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +46,7 @@ flutter:
     - assets/images/city/4/
     - assets/images/profiles/
     - assets/icons/
+    - assets/images/slider/
 
   fonts:
     - family: Montserrat

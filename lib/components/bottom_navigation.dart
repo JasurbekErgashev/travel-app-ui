@@ -19,8 +19,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
           children: [
             currentPage == 'home'
                 ? const ActiveBottomNavigationItem(CustomIcons.home)
-                : InactiveBottomNavigationItem(
-                    CustomIcons.home, () => Navigator.pushNamed(context, '/')),
+                : InactiveBottomNavigationItem(CustomIcons.home,
+                    () => Navigator.pushNamed(context, '/home')),
             currentPage == 'booking'
                 ? const ActiveBottomNavigationItem(CustomIcons.bookmark)
                 : InactiveBottomNavigationItem(CustomIcons.bookmark,
