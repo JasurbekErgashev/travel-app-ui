@@ -15,3 +15,4 @@ you can check out the demo below:
 Your browser does not support the video tag.
 </video>
 
+![travel_app](https://user-images.githubusercontent.com/84211518/185590238-4e127819-b58c-4a9a-bdf8-dad824254748.gif)
