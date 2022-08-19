@@ -10,9 +10,4 @@ Design inspiration comes from <a href="https://dribbble.com/imran_ux">Dribbble</
 
 you can check out the demo below:
 
-<video controls autoplay>
-  <source src="https://user-images.githubusercontent.com/84211518/185589467-8393ebdf-48ea-452f-97eb-11e6f1a4f4c9.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-
 ![travel_app](https://user-images.githubusercontent.com/84211518/185590238-4e127819-b58c-4a9a-bdf8-dad824254748.gif)
